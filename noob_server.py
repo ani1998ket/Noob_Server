@@ -1,3 +1,6 @@
+import os
+import sys
+import signal
 import socket
 
 def init():
@@ -47,6 +50,11 @@ def process_header( request ):
             response += f.read()
 
     return response.encode( 'ascii' )
-            
+
+def handler( signum, frame ):
+    print( "Exiting the server")
+    sys.exit(0)
+
 if __name__ == '__main__':
+    signal.signal( signal.SIGINT, handler )
     init()
