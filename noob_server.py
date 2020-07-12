@@ -11,7 +11,7 @@ def init():
         s.setsockopt( socket.SOL_SOCKET, socket.SO_REUSEADDR, 1 )
         s.bind( (HOST, PORT) )
         s.listen(1)
-        print( "Server listening on port", PORT )
+        print( "Server listening on port", PORT, "..." )
         
         while True:
             conn, addr = s.accept()
@@ -52,7 +52,7 @@ def process_header( request ):
     return response.encode( 'ascii' )
 
 def handler( signum, frame ):
-    print( "Exiting the server")
+    print( "\nExiting the server")
     sys.exit(0)
 
 if __name__ == '__main__':
