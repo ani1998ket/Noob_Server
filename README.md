@@ -22,6 +22,7 @@ An extremely basic HTTP Server written using socket module in python.
 
     http://localhost:8888/
 
+> Type Ctrl + C to exit the server
 
 ### Index page
 
